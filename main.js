@@ -40,5 +40,16 @@ renderArtists = (objectID) => {
 };
 
 const createCardElements = () => {
-    
-}
+    const article = document.createElement("article");
+    const primaryImageSmall = document.createElement('img');
+    const details = document.createElement("div");
+    const like = document.createElement("div");
+    const artistDisplayName = document.createElement("h2");
+    const title = document.createElement("title");
+    return { article, primaryImageSmall, like, artistDisplayName, details, title };
+
+
+
+
+};
+
