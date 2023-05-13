@@ -24,16 +24,18 @@ renderArtists = (objectID) => {
     const main = document.querySelector("main");
     const artistArray = [];
 
-    objectID.forEach((artistobject) => {
+    objectID.forEach((artistObject) => {
         //card elements
         const elemObj = createCardElements();
 
-        //artistscard
+        //artistCard
+        const artistCard = createArtistCard(elemObj, artistObject);
+
         //push card to array
         
     });
 
-   artistArray.forEach((artistobject) => {
+   artistArray.forEach((artistObject) => {
     main.appendChild(card);
 
    });
@@ -48,8 +50,25 @@ const createCardElements = () => {
     const title = document.createElement("title");
     return { article, primaryImageSmall, like, artistDisplayName, details, title };
 
-
-
-
 };
+
+const createArtistCard = (elemObj, artistObject) => {
+    const { article, primaryImageSmall, details, like, artistDisplayName, title } = elemObj;
+
+    details.className = "details";
+    like.classList.add("like");
+
+    artistDisplayName.textContent = `${artistObject.artistDisplayName}`;
+    Img.src = artistObject.primaryImageSmall;
+
+    article.appendChild(primaryImageSmall);
+    details.appendChild(artistDisplayName);
+    details.appendChild(title);
+    article.appendChild(details);
+    article.appendChild(like);
+
+    return article
+
+}
+
 
